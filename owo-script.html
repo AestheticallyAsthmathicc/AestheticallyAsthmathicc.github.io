@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>OwO Script</title>
+    <style>
+        body {
+            background-color: #e43f5a;
+            display: flex;
+            justify-content: center;
+        }
+
+        #mainContainer {
+            margin-top: 200px;
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #sentenceInput, #sentenceOutput {
+            font-family: 'Press Start 2P', cursive;
+            color: #1b1b2f;
+        }
+
+        #sentenceInput {
+            font-style: 16px;
+            border: none;
+            padding: 8px;
+            background: none;
+            border-bottom: #1b1b2f 4px solid;
+        }
+
+        #sentenceOutput {
+            margin-top: 100px;
+            text-align: center;
+            text-shadow: 0 0 4px #1b1b2f;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus,
+        button:focus {
+            outline: none;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="mainContainer">
+        <input type="text" name="sentenceInput" id="sentenceInput" placeholder="Enter your text here">
+    
+        <h1 id="sentenceOutput"></h1>
+    </div>
+    
+    <script>
+        let inputSentenceObject = document.getElementById('sentenceInput');
+        let outputSentenceObject = document.getElementById('sentenceOutput');
+
+        let randomShit = ['OwO', 'UwU'];
+
+        inputSentenceObject.addEventListener('input', function() {
+            let inputSentence = document.getElementById('sentenceInput').value;
+
+            inputSentence = inputSentence.replace(/r/g, 'w');
+            inputSentence = inputSentence.replace(/l/g, 'w');
+
+            outputSentenceObject.innerText = inputSentence + ' ' + randomShit[Math.round(Math.random() * 1)];
+        });
+    </script>
+</body>
+</html>
