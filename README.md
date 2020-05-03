@@ -1,1 +1,2 @@
-# AestheticallyAsthmathicc.github.io
+# owo-script.github.io
+# Not a serious project
